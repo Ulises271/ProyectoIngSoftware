@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bancora | Home</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!--Para la pagina principal usare enfoque SPA sin framework para evitar cargas al servidor-->
+    <div id="header-container">
+        <header>
+            <h1 id="titulo">BANCORA</h1>
+        </header>
+        <nav id="nav-principal">
+            <ul id="nav-lista">
+                <li><a id="bs_inicio" onclick="cambio('inicio')" class="elementos es" href="#">Inicio</a></li>
+                <li><a id="bs_servicios" onclick="cambio('servicios')" class="elementos es" href="#">Servicios</a></li>
+                <li><a id="bs_contacto" onclick="cambio('contacto')" class="elementos es" href="#">Contacto</a></li>
+                <li><a href="register.html" class="btns-log elementos" id="register">Registrarse</a></li>
+                <li><a href="login.html" class="btns-log elementos" id="login"> Acceder</a></li>
+            </ul>
+        </nav>
+    </div>
+        
+    <main>
+        <section id="s1">
+            <img src="recursos/graficapapel.jpg" id="img-principal">
+            <p id="p_principal">En BANCORA, ponemos a tu alcance las mejores herramientas financieras y tecnológicas para ayudarte a interpretar el mercado, tomar decisiones inteligentes y construir un futuro sólido.</p>
+        </section>
+        <section id="s2">
+            <div class="market">
+                <h2 id="market-title">
+                    Global Market
+                </h2>
+                <label id="fecha-actualizacion">Ultima actualizacion <br>25/04/2025</label>
+                <div id="contenedor-valores">
+                    <div class="monedas">
+                        <h3>USD/MXN</h3>
+                        <label id="mxn">19.55 <span class="caida">-0.8%</span></label>
+                    </div>
+                    <div class="monedas">
+                        <h3>USD/EUR</h3>
+                        <label id="eur">0.93 <span class="subida">+0.5%</span></label>
+                    </div>
+                    <div class="monedas">
+                        <h3>USD/JPY</h3>
+                        <label id="jpy">134.77 <span class="caida">-0.2%</span></label>
+                    </div>
+                    <div class="monedas">
+                        <h3>USD/GBP</h3>
+                        <label id="gbp">0.82 <span class="subida">+0.7%</span></label>
+                    </div>
+                    <div class="monedas">
+                        <h3>USD/CHF</h3>
+                        <label id="chf">0.91 <span class="caida">-0.4%</span></label>
+                    </div>
+                    <div class="monedas">
+                        <h3>USD/CAD</h3>
+                        <label id="cad">1.36 <span class="subida">+0.2%</span></label>
+                    </div>
+                    <div class="monedas">
+                        <h3>USD/CNY</h3>
+                        <label id="cny">6.92 <span class="caida">-0.6%</span></label>
+                    </div>
+                    <div class="monedas">
+                        <h3>USD/AUD</h3>
+                        <label id="aud">1.49 <span class="subida">+0.4%</span></label>
+                    </div>
+                    <div class="monedas">
+                        <h3>USD/BRL</h3>
+                        <label id="brl">5.24 <span class="caida">-0.7%</span></label>
+                    </div>
+                    
+                </div> 
+            </div>
+            <div class="ini-servicios">
+                <h2 id="ini-t-servicios">Nuestros Servicios</h2>
+                <div id="contenedor-servicios">
+                    <label><i style="font-size: 20px; margin-right:5px;" class="fa-solid fa-chart-line"></i>Analisis de Mercados</label>
+                    <label><i style="font-size: 20px; margin-right:5px;" class="fa-solid fa-handshake"></i>Asesoria Financiera</label>
+                    <label><i style="font-size: 20px; margin-right:5px;" class="fa-solid fa-folder-open" ></i>Gestion de Archivos</label>
+                </div>
+            </div>
+            <div>
+                
+            </div>
+        </section>
+        <section id="s3">
+            
+        </section>
+        <section id="s4">
+
+        </section>
+    </main>
+    
+
+    <footer>
+        <section>
+
+        </section>
+        <section>
+
+        </section>
+        <section>
+
+        </section>
+    </footer>
+    <script src="js/market.js"></script>
+    <script src="js/basicas.js"></script>
+</body> 
+</html>

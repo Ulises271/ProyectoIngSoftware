@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bancora | Panel de Usuario</title>
+    <link rel="stylesheet" href="css/user.css">
+</head>
+<body>
+<div id="header-container">
+    <header>
+        <h1 id="titulo">BANCORA</h1>
+    </header>
+    <div class="loggeduser">
+        <h2 class="nombreUser" id="nombreUsuario">Cargando usuario...</h2>
+        <button onclick="logout()" id="btn-cerrar">Cerrar Sesión</button>
+    </div>
+</div>
+
+<div id="tarjets-container">
+    <h2> Tarjetas</h2>
+    <div class="all-tarjets">
+        <!-- Las tarjetas se generan dinámicamente aquí -->
+    </div>
+</div>
+
+<div id="historial-container">
+    <h2>Historial de Transacciones</h2>
+    <div class="all-historial">
+        <!-- Las transacciones se generan dinámicamente aquí -->
+    </div>
+</div>
+
+<div id="transferencia-container">
+    <!-- Aquí podrías agregar una tabla o tarjetas de transferencias -->
+</div>
+
+<!--Borrar al final el siguiente div-->
+<div style="margin-bottom: 100px;"></div>
+
+<!-- Scripts -->
+<script>
+    function logout() {
+        alert("Sesión cerrada");
+        sessionStorage.clear();
+        window.location.href = "login.html";
+    }
+
+    document.addEventListener("DOMContentLoaded", async () => {
+        const email = sessionStorage.getItem("email");
+
+        if (!email) {
+            alert("No se detectó sesión iniciada");
+            window.location.href = "login.html";
+            return;
+        }
+
+        try {
+            const response = await fetch(`/api/user/data?email=${encodeURIComponent(email)}`);
+            if (!response.ok) throw new Error("Respuesta no OK");
+
+            const data = await response.json();
+
+            // Mostrar nombre del usuario
+            document.getElementById("nombreUsuario").innerText = data.cliente.nombre;
+
+            // Tarjetas
+            const tarjetasContainer = document.querySelector(".all-tarjets");
+            tarjetasContainer.innerHTML = "";
+            data.tarjetas.forEach(t => {
+                const tarjetaHtml = `
+                <div class="tarjets">
+                    <h3 class="h3-b">Bancora</h3>
+                    <h3 class="h3-n">${t.numeroTarjeta}</h3>
+                    <div class="aux-vencimiento">
+                        <label>Vencimiento</label><br>
+                        <label>${t.fechaExpiracion?.substring(0, 10)}</label>
+                    </div>
+                    <div class="aux-cvv">
+                        <label>CVV</label><br>
+                        <label class="hovercvv">${t.cvv}</label>
+                    </div>
+                    <div class="aux-tarjets">
+                        <h4 class="disponible">$${t.saldo.toFixed(2)}</h4>
+                        <label>Disponible</label>
+                    </div>
+                </div>`;
+                tarjetasContainer.innerHTML += tarjetaHtml;
+            });
+
+            // Transacciones
+            const historialContainer = document.querySelector(".all-historial");
+            historialContainer.innerHTML = "";
+            data.transacciones.forEach(tx => {
+                const txHtml = `
+                <div class="tarjetas-historial">
+                    <h3 class="tipo-transaccion">${tx.tipo}</h3>
+                    <div class="datos-trans-contenedor">
+                        <label>Monto: $${tx.monto.toFixed(2)}</label>
+                        <label>Fecha: ${tx.fecha?.substring(0, 10)}</label>
+                        <label>ID Transacción: ${tx.idTransaccion}</label>
+                        <label>Descripción:</label>
+                        <p>${tx.descripcion || "Sin descripción"}</p>
+                    </div>
+                </div>`;
+                historialContainer.innerHTML += txHtml;
+            });
+
+        } catch (error) {
+            alert("Error al cargar los datos del usuario.");
+            console.error("Error de carga:", error);
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+*{box-sizing: border-box;margin: 0;padding: 0;}
+html,body{height: 100%; width: 100%;}
+/*Cabecera*/
+#header-container{
+    /*border:1px solid yellow;*/
+    background-color: #F29049;
+    background-color: #2c3e50;
+    /*background-color: #5454C4;*/
+    display: flex;
+    overflow-x:auto ;
+    align-items: center;
+    box-shadow: 0 0 8px 1px black;
+}
+#header-container header{
+    /*border:1px solid red;*/
+    position: relative;
+    padding: 30px;
+}
+#titulo{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+    font-size: 40px;
+    color:white
+}
+
+
+
+/*Usuario cierre*/
+.loggeduser{
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    position: relative;
+    gap:5px;
+    display: flex;
+    background-color: #2c3e50;
+    /*border: 1px solid white;*/
+    margin-left: auto;
+    padding-right: 6px;
+}
+.nombreUser{
+    color: white;
+    font-size: 16px;
+}
+#btn-cerrar{
+    background-color: red;
+    padding: 4px;
+    color: white;
+}
+
+
+/*Tarjetas e historial*/
+#tarjets-container,#historial-container{
+    background-color: #E6E8E7;
+    padding: 4px;
+    border-radius: 8px;
+}
+#tarjets-container,#historial-container{
+    /*border:1px solid black;*/
+    margin: 20px;
+}
+#tarjets-container  h2,#historial-container h2{
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.all-tarjets, .all-historial{
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 18px;
+    overflow-x: auto;
+    padding: 5px;
+    
+}
+.tarjets{
+    position: relative;
+    background-color: #187AA9 ;
+    min-width: 250px;
+    width: 260px;
+    height: 150px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 1px slategrey;
+}
+.h3-b{
+    color: white;
+    font-style: italic;
+    font-size: 24px;
+}
+.h3-n{
+    margin-top: 5px;
+    color: white;
+    font-weight: 100;
+}
+.aux-tarjets{
+    position: absolute;
+    bottom: 10px;
+}
+.aux-tarjets label{
+    color: white;
+    font-size: 16px;
+}
+.disponible{
+    color: white;
+    font-weight: 100;
+    font-size: 25px;
+    font-style: oblique;
+}
+.aux-vencimiento{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    color: white;
+}
+.aux-cvv{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.aux-cvv >label:nth-child(1){
+    background-color: yellowgreen;
+    border-radius: 4px;
+    padding: 3px;
+    cursor: pointer;
+}
+.aux-cvv >label:nth-child(3){
+    display: block;
+    color:white;
+    padding: 4px;
+    text-align: center;
+    display: none;
+}
+/* Mostrar .hovercvv cuando el primer label tiene hover */
+.aux-cvv > label:nth-child(1):hover + br + .hovercvv {
+    display: block;
+}
+.expiradas{
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+
+/*Tarjetas individuales Historial*/
+.tarjetas-historial{
+    width: 350px;
+    min-width: 200px;
+    height: 200px;
+    background-color: #EDF6FA;
+    box-shadow: 0 0 3px 1px gray;
+    padding: 10px;
+}
+.datos-trans-contenedor{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+/* Al scrollbar completo */
+::-webkit-scrollbar {
+    width: 8px; /* Ancho del scroll vertical */
+    height: 8px; /* Altura del scroll horizontal */
+}
+
+/* A la parte de fondo del scrollbar */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* A la parte que se mueve (el "thumb") */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+/* Cuando pasas el mouse sobre el thumb */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    cursor: pointer;
+}

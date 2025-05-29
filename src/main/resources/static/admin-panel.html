@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bancora | Panel Administrativo</title>
+  <link rel="stylesheet" href="css/admin.css" />
+
+</head>
+<body>
+  <!-- Barra superior del administrador -->
+  <header class="admin-bar">
+    <div class="admin-info">
+      <span>Administrador: <span id="nombreAdmin"></span></span>
+
+      <script>
+        // Al cargar el panel
+        document.addEventListener("DOMContentLoaded", () => {
+          const nombre = sessionStorage.getItem("nombreUsuario") || "Usuario";
+          document.getElementById("nombreAdmin").innerText = nombre;
+        });
+      </script>
+    </div>
+    <div class="logout">
+      <button onclick="logout()">Cerrar Sesión</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>Panel de Administración de Usuarios</h1>
+
+    <!-- Crear usuario -->
+    <section class="card">
+      <h2>Crear Usuario</h2>
+      <form id="form-crear">
+
+        <input type="text" placeholder="Nombre" name="nombre" id="nombre" required />
+        <input type="text" placeholder="Apellidos" name="apellidos" id="apellidos" required />
+        <input type="date" placeholder="" name="fechaNacimiento" id="fechaNacimiento" required />
+
+        <input type="text" placeholder="Direccion" name="direccion" id="direccion" required />
+        <input type="text" placeholder="Telefono" name="Telefono" id="tWelefono" required />
+
+        <input type="email" placeholder="Correo" name="correo" id="correo" required />
+
+
+        <button type="submit">Crear</button>
+      </form>
+    </section>
+
+    <!-- Tabla de usuarios -->
+    <section class="card">
+      <h2>Lista de Usuarios</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Usuario</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-usuarios">
+
+
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <script>
+    function logout() {
+      alert("Sesión cerrada");
+      window.location.href = "login.html"; // Redirige al login
+    }
+  </script>
+  <script src="js/crud.js"></script>
+</body>
+</html>
+

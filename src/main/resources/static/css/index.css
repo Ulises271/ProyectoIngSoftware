@@ -1,0 +1,264 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width:100%;
+}
+body{
+   /* background-color: #2D2C70;
+    background-color: #F29136;*/
+    background-color: white;
+}
+
+/*Cabecera*/
+#header-container{
+    /*border:1px solid yellow;*/
+    background-color: #F29049;
+    background-color: #2c3e50;
+    /*background-color: #5454C4;*/
+    display: flex;
+    overflow-x:auto ;
+    box-shadow: 0 0 8px 1px black;
+}
+#header-container header{
+    /*border:1px solid red;*/
+    position: relative;
+    padding: 30px;
+}
+#titulo{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+    font-size: 40px;
+    color:white
+}
+
+#nav-principal{
+    margin-left: auto;
+    /*border:1px solid wheat;*/
+}
+#nav-principal ul{
+    display: flex;
+    /*border: 1px solid red;*/
+    height: 100%;
+    align-items: center;
+    gap:11px;
+    padding:0 15px;
+}
+#nav-principal ul li{
+    list-style-type: none;
+    color: white;
+    /*border: 1px solid white;*/
+    
+    
+}
+.elementos{
+    /*border:1px solid red;*/
+    display: block;
+    padding: 15px;
+    text-wrap: nowrap;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+}
+
+.es:hover{
+    font-size: 19px;
+}
+.btns-log{
+    border-radius: 10px;
+    /*background-color: #AAF5B7;*/
+    background-color: #2863A2;
+    color:white;
+    font-size: 17px;
+}
+.btns-log:hover{
+    font-size: 19px;
+    background-color:#4F80B3;
+}
+.btns-log:active{
+    font-size: 19px;
+    background-color: #769CC4;
+}
+
+#register{
+    margin-left: 35px;
+}
+
+
+/*Main*/
+
+main{
+    margin-top:10px;
+    /*border:1px solid black;*/
+    min-height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+main section{
+    min-height: 300px;
+    /*border:red 1px solid;*/
+}
+
+
+
+
+/*Seccion Market*/
+#s1{
+    background-color: #D9EAF2;
+    background-color: #F29049;
+    background-color: #4F80B3;
+    background-color: #2c3e50;
+    margin: 0 10px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+#s1 p{
+    margin:10px 30px;
+    text-align: center;
+    color:white;
+    font-size: 21px;
+}
+#p_principal{
+    padding: 0 20px 0 20px
+}
+#img-principal{
+    height: 340px;
+    width: 100%;
+    object-fit: cover; /* como background-size: cover */
+    object-position: top; /*como background-position: top */
+}
+.flecha{
+    position: absolute;
+    height: 50px;
+    filter: sepia(1) saturate(1) hue-rotate(180deg); /* Cambiar color a tonos cálidos */
+}
+#flI{
+    left: 10px;
+    top:150px;
+}
+#flD{
+    right:10px;
+    top:150px;
+}
+
+
+/*S2*/
+#s2{border:none; }
+.market ,.ini-servicios{
+    /*border: 3px solid yellow;*/
+    position: relative;
+    background-color: #E8EAE9;
+    margin: 0 10px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+#market-title,#ini-t-servicios{
+    padding: 15px;
+    padding-left: 24px;
+}
+#fecha-actualizacion{
+    position: absolute;
+    top:14px;
+    right: 14px;
+    text-align: end;
+}
+#contenedor-valores,#contenedor-servicios{
+    /*border:1px solid blue;*/
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+    column-gap:10px;
+    row-gap:20px;
+    background-color: #EDF6FA;
+    padding: 14px;
+    padding-left: 20px;
+    overflow-x: auto;
+}
+
+.monedas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    color:black;
+    min-width: 120px;
+
+}
+.monedas h3{
+    background-color: #3E7692;
+    font-weight: 700;
+    text-align: center;
+    padding: 7px 17px;
+    width: 120px;
+    color: white ;
+}
+.monedas label{
+    background-color: #E8EAE9;
+    width: 100%;
+    padding: 7px 8px;
+    text-align: center;
+}
+.caida{
+    color: red;
+    font-size: 17px;
+}
+.subida{
+    color: green;
+    font-size: 17px;
+}
+
+.ini-servicios{
+    background-color: white;
+}
+
+
+
+/*S3*/
+#s3{
+    /*border:1px red solid;*/
+}
+
+/*4*/
+#s4{
+    /*border:1px black solid;*/
+}
+
+
+
+
+
+
+
+
+/* Al scrollbar completo */
+::-webkit-scrollbar {
+    width: 8px; /* Ancho del scroll vertical */
+    height: 8px; /* Altura del scroll horizontal */
+}
+
+/* A la parte de fondo del scrollbar */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* A la parte que se mueve (el "thumb") */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+/* Cuando pasas el mouse sobre el thumb */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    cursor: pointer;
+}
